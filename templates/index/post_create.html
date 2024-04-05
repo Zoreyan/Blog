@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+  <main class="form-signin">
+    <div class="row mt-5">
+        <div class="col-3 mx-auto ">
+            <form method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+                <h1 class="h3 mb-3 fw-normal">Create Post</h1>
+                <div class="form-floating">
+                  {{ form.image }}
+                  <label for="floatingImage">Image</label>
+                </div>
+                <div class="form-floating">
+                  {{ form.title }}
+                  <label for="floatingInput">Title</label>
+                </div>
+                <div class="form-floating mt-2">
+                  {{ form.content }}
+                  <label for="floatingArea">Text</label>
+                </div>
+                <button class="w-100 mt-4 btn btn-lg btn-primary" type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+  </main>
+{% endblock %}
